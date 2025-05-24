@@ -547,18 +547,79 @@ int main()
       sep = '|';
       n = tokenCount(s, sep);
       cout << n << endl; // Salida: 1
+      s = "";
+      sep = '|';
+      n = tokenCount(s, sep);
+      cout << n << endl; // Salida: 0
       break;
    }
    case 49:
    {
-
+      string s = "";
+      char sep = '|';
+      addToken(s, sep, "John");
+      cout << s << endl; // Salida: John
+      addToken(s, sep, "Paul");
+      cout << s << endl; // Salida: John|Paul
+      addToken(s, sep, "George");
+      cout << s << endl; // Salida: John|Paul|George
+      addToken(s, sep, "Ringo");
+      cout << s << endl; // Salida: John|Paul|George|Ringo
       break;
    }
    case 50:
    {
-
+      string s = "John|Paul|George|Ringo";
+      char sep = '|';
+      int pos = 0;
+      string t = getTokenAt(s, sep, pos);
+      cout << t << endl; // Salida: John
+      pos = 1;
+      t = getTokenAt(s, sep, pos);
+      cout << t << endl; // Salida: Paul
+      pos = 2;
+      t = getTokenAt(s, sep, pos);
+      cout << t << endl; // Salida: George
+      pos = 3;
+      t = getTokenAt(s, sep, pos);
+      cout << t << endl; // Salida: Ringo
       break;
    }
+   case 51:
+   {
+      string s = "John|Paul|George|Ringo";
+      char sep = '|';
+      int i = 2;
+      removeTokenAt(s, sep, i);
+      cout << s << endl; // Salida: John|Paul|Ringo
+      i = 0;
+      removeTokenAt(s, sep, i);
+      cout << s << endl; // Salida: Paul|Ringo
+      break;
+   }
+   case 52:
+   {
+      string s = "John|Paul|George|Ringo";
+      char sep = '|';
+      int i = 1;
+      string t = "McCartney";
+      setTokenAt(s, sep, t, i);
+      cout << s << endl; // Salida: John|McCartney|George|Ringo
+      break;
+   }
+   case 53:
+   {
+      string s = "John|Paul|George|Ringo";
+      char sep = '|';
+      string t = "Paul";
+      int p = findToken(s, sep, t);
+      cout << p << endl; // Salida: 1
+      t = "Ringo";
+      p = findToken(s, sep, t);
+      cout << p << endl; // Salida: 0
+      break;
+   }
+
    default:
 
       break;
