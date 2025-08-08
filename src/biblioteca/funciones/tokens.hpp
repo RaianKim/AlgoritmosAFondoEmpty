@@ -102,7 +102,7 @@ void setTokenAt(string &s, char sep, string t, int i)
 int findToken(string s, char sep, string t)
 {
    int sepCount = 0;
-   cout << s[15] << endl;
+
    for (int i = 0; i < length(s); i++)
    {
       if(sep == s[i])

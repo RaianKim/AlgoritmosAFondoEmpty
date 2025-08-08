@@ -16,6 +16,15 @@
 #include "biblioteca/tads/parte1/Coll.hpp"
 #include "biblioteca/tads/parte1/MultidimColl.hpp"
 using namespace std;
+template<typename T>
+void probarColl()
+{
+   char aux;
+   cin >> aux;
+   Coll<T> c = coll<T>(aux);
+   cout << c.sep << endl;
+}
+
 
 int main()
 {
@@ -617,6 +626,12 @@ int main()
       t = "Ringo";
       p = findToken(s, sep, t);
       cout << p << endl; // Salida: 0
+      break;
+   }
+   case 54:
+   {
+      
+      probarColl<char>();
       break;
    }
 
